@@ -1,4 +1,4 @@
-token = '8e261017af18ecb7c5420d7814273a955d221bff'
+token = 'ADD TOKEN'
 
 start = "2020-02-01" #Year-mounth-day
 end = "2020-02-29"
