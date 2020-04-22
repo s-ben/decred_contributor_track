@@ -15,6 +15,13 @@ def get_all_repo(user,token):
             break
     return all_repo
 
+# Get all repos for a given arrays of users
+# e.g. gel_all_users_repo(["decred", "raedahgroup"], token)
+def get_all_users_repo(users,token):
+    repos = {}
+    for user in users:
+        repos[user] = get_all_repo(user,token)
+    return repos
 
 # Get list of repos and usernames
 
@@ -46,7 +53,7 @@ def get_commits_repo(user,repo,token):
         commits = requests.get("https://api.github.com/repos/"+user+"/"+repo+"/commits?page="+str(pageno)+'&access_token='+token+"&per_page=100")
         all_commits.extend(commits.json())
 
-    return all_commits 
+    return all_commits
 
 # Get all PRs for a given repo 
 def get_pull_requests_repo(user,repo,state,token):
